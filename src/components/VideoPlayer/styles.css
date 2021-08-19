@@ -1,0 +1,23 @@
+#videoplayer {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+#videoplayer video {
+    display: block;
+    height: 110%;
+    right: 0;
+    transition: all .3s;
+}
+
+#videoplayer .calling {
+    position: absolute;
+    height: 25%;
+    top: 16px;
+    left: 16px;
+    border-radius: 16px;
+}

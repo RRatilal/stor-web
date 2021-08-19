@@ -1,0 +1,25 @@
+#auth-header.logo-container {
+    width: 100%;
+    height: 50vh;
+    background: var(--color-primary);
+    background-image: url("../../assets/images/background.svg");
+    background-size: 90% 90%;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+#auth-header.logo-container img {
+    height: 10rem;
+}
+
+#auth-header.logo-container h2 {
+    font-weight: 500;
+    font-size: 2rem;
+    line-height: 2.6rem;
+    margin-top: 0.8rem;
+    color: var(--color-text-in-primary);
+}

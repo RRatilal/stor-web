@@ -1,0 +1,216 @@
+#page-teacher-profil {
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+}
+
+#page-teacher-profil .page-header {
+    background-image: url('../../assets/images/smoll-background.svg');
+    background-size: 90% 80%;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+#page-teacher-profil .page-header .header-content {
+    margin-bottom: 6.4rem;
+    display: flex;
+    flex-direction: column;
+    justify-items: center;
+    align-items: center;
+}
+
+#page-teacher-profil .header-content .avatar-container {
+    width: 14rem;
+    height: 14rem;
+    position: relative;
+    margin-bottom: 2.4rem;
+}
+
+#page-teacher-profil .header-content .avatar-container .avatar {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    overflow: hidden;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.4s;
+}
+
+#page-teacher-profil .header-content .avatar-container img {
+    min-width: 100%;
+    max-height: 100%;
+    
+}
+
+#page-teacher-profil .header-content .avatar-container  .new-image {
+    width: 4rem;
+    height: 4rem;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    border-radius: 50%;
+    background: var(--color-secundary);
+    cursor: pointer;
+}
+
+#page-teacher-profil .header-content .avatar-container  .new-image img {
+    width: 100%;
+    height: 2.4rem;
+}
+
+#page-teacher-profil .header-content .avatar-container #image-profile {
+    display: none;
+}
+
+#page-teacher-profil .header-content  p {
+    margin-top: 0;
+}
+
+#page-teacher-profil main {
+    width: 90%;
+    max-width: 122rem;
+    border-radius: 0.8rem;
+    margin: -3.2rem auto 3.2rem;
+    padding-top: 2.4rem;
+    background: var(--color-box-base);
+    z-index: 10;
+}
+
+#page-teacher-profil main fieldset {
+    border: 0;
+    padding: 0 2.4rem;
+}
+
+#page-teacher-profil main fieldset legend {
+    font: 700 2.4rem Archivo;
+    color: var(--color-text-title);
+    margin-bottom: 2.4rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    width: 100%;
+    padding-bottom: 1.6rem;
+    border-bottom: 1px solid var(--color-line-in-dark);
+}
+
+#page-teacher-profil main fieldset .input-block + .textarea-block {
+    margin-top: 2.4rem;
+}
+
+#page-teacher-profil main footer {
+    padding:  4rem 2.4rem;
+    background: var(--color-box-footer);
+    border-top: 1px solid var(--color-line-in-dark);
+    margin-top: 6.4rem;
+}
+
+#page-teacher-profil main footer p {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.4rem;
+    line-height: 2.4rem;
+    color: var(--color-text-in-primary);
+}
+
+#page-teacher-profil main footer p img {
+    margin-right: 2rem;
+}
+
+#page-teacher-profil main footer button {
+    width: 100%;
+    height: 5.6rem;
+    background: var(--color-secundary);
+    color: var(--color-button-text);
+    border: 0;
+    border-radius: .8rem;
+    cursor: pointer;
+    font: 700 1.6rem Archivo;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    margin-top: 3.2rem;
+    transition: background-color .2s;
+}
+
+#page-teacher-profil main footer button:hover {
+    background: var(--color-secundary-dark);
+}
+
+@media (min-width: 700px) {
+    #page-teacher-profil {
+        max-width: 100%;
+    }
+
+    #page-teacher-profil .page-header {
+        height: auto;
+        padding-bottom: 6.4rem;
+        background-image: url('../../assets//images/profil-background.svg');
+    }
+
+    #page-teacher-profil .page-header .header-content {
+        margin-bottom: 0;
+    }
+
+    #page-teacher-profil .header-content .avatar-container {
+        margin-top: 6.4rem;
+    }
+
+    #page-teacher-profil .header-content .avatar-container  a {
+        width: 4.8rem;
+        height: 4.8rem;
+    }
+
+    #page-teacher-profil main fieldset {
+        padding: 0 6.4rem;
+    }
+
+    #page-teacher-profil main fieldset .name-surname {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        column-gap: 3.2rem;
+        margin-bottom: 1.4rem;
+    }
+
+    #page-teacher-profil main fieldset .input-block + .input-block {
+        margin: 0;
+    }
+
+    #page-teacher-profil main fieldset .email-whatsapp {
+        display: grid;
+        grid-template-columns: 2fr 1fr;
+        column-gap: 3.2rem;
+        margin-bottom: 1.4rem;
+    }
+
+    #page-teacher-profil main .schedule-item {
+        display: grid;
+        grid-template-columns: 2fr 1fr 1fr;
+        column-gap: 1.6rem;
+    }
+
+    #page-teacher-profil main .schedule-item .input-block {
+        margin-top: 0 !important;
+    }
+
+    #page-teacher-profil main footer {
+        padding: 4.0rem 6.4rem;
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+    }
+
+    #page-teacher-profil main footer p {
+        justify-content: space-between;
+    }
+
+    #page-teacher-profil main footer button {
+        width: 20rem;
+        margin-top: 0;
+    }
+}

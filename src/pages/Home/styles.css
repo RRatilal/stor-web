@@ -1,0 +1,67 @@
+#page-landing-content {
+    width: 100%;
+    height: 100vh;
+    overflow-x: hidden;
+
+    display: grid;
+    grid-template-rows: 49px 1fr 120px;
+    grid-template-columns: 1fr;
+    grid-template-areas: 
+        'top-bar'
+        'image'
+        'footer'
+    ;
+}
+
+#page-landing-content .top-bar-container {
+    grid-area: top-bar;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+}
+
+#page-landing-content .top-bar-container button {
+    width: 40px;
+    height: 40px;
+    border-radius: 8px;
+    background-color: var(--color-primary);
+    margin-right: 5px;
+    cursor: pointer;
+    transition: background-color .3s;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#page-landing-content .top-bar-container button:hover {
+    background-color: var(--color-delete);
+}
+
+#page-landing-content .hero-image {
+    grid-area: image;
+    max-width: 100%;
+    min-height: 100%;
+    justify-self: center;
+}
+
+#page-landing-content .footer {
+    grid-area: footer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#page-landing-content .footer .wellcome {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+}
+
+#page-landing-content .footer .wellcome span {
+    font-size: 28px;
+}

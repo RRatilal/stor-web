@@ -1,0 +1,11 @@
+#page-dashboard {
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+
+    display: grid;
+    grid-template-columns: 80px 1fr;
+
+    color: var(--color-text-in-primary);
+    background: var(--color-background)
+}

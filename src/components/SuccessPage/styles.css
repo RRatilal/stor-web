@@ -1,0 +1,60 @@
+#success-page {
+    width: 100vw;
+    height: 100vh;
+    background: var(--color-primary);
+    background-image: url("../../assets/images/success-background.svg");
+    background-size: 90% 90%;
+    background-repeat: no-repeat;
+    background-position: center;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    letter-spacing: 1px;
+}
+
+#success-page img {
+    margin-bottom: 3.2rem;
+}
+
+#success-page .success-container {
+    width: 100%;
+    max-width: 541px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+}
+
+#success-page .success-container h1 {
+    width: 100%;
+    font: 700 4.2rem Archivo;
+    color: var(--color-title-in-primary);
+    margin-bottom: 1rem;
+}
+
+#success-page .success-container p {
+    width: 100%;
+    max-width: 472px;
+    font: 400 1.6rem Poppins;
+    color: var(--color-text-in-primary);
+}
+
+#success-page .success-container button {
+    width: 100%;
+    max-width: 188px;
+    height: 5.6rem;
+    margin-top: 6rem;
+    background: var(--color-secundary);
+    color: var(--color-button-text);
+    border: 0;
+    border-radius: .8rem;
+    cursor: pointer;
+    font: 600 1.6rem Archivo;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    transition: all .3s;
+}

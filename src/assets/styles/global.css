@@ -1,0 +1,75 @@
+:root {
+    --color-background: #2E384D;
+    --color-primary-lighter: #9871F5;
+    --color-primary-light: #29ABE2;
+    --color-primary: #212B3E;
+    --color-primary-dark: #1c2536;
+    --color-primary-darker: #6842C2;
+    --color-secundary: #4CD62B;
+    --color-secundary-dark: #3A9E22;
+    --color-title-in-primary: #29ABE2;
+    --color-text-in-primary: #B2B9FF;
+    --color-text-title: #29ABE2;
+    --color-text-complement: #9C98A6;
+    --color-text-base: #f2f3f5;
+    --color-line-in-dark: #2E384D;
+    --color-input-background: #2E384C;
+    --color-button-text: #FFFFFF;
+    --color-box-base: #111E36;
+    --color-box-footer: #0D182D;
+    --color-button-background: #DCDCE5;
+    --color-delete: #E83F5B;
+    --color-background-hover: #EBEBF5;
+    --color-text-input: #C1BCCC;
+  
+    font-size: 60%;
+  }
+
+  * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+  }
+
+  html, body, #root {
+      height: 100vh;
+      overflow-x: hidden;
+  }
+
+  body {
+      background: var(--color-background);
+  }
+
+  #root {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+  }
+
+  body,
+  input,
+  button,
+  textarea {
+      font: 500 1.6rem Poppins;
+      color: var(--color-text-base);
+      background-color: transparent;
+      border: none;
+  }
+
+  button:focus {
+      outline: none;
+  }
+
+  ::-webkit-scrollbar {
+      width: 2px;
+  }
+
+  .container {
+      width: 100%;
+  }
+
+  @media (min-width: 700px) {
+      :root {
+          font-size: 62.5%;
+      }
+  }
