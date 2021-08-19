@@ -37,7 +37,9 @@ const WeekDay: React.FC<IWeekDay> = ({ dayClass, schedule, day, setActivatedDay,
 
             setRangeArray(result)
         }
-    }, [schedule]);
+
+        console.log(chosenTimeItem)
+    }, [schedule, chosenTimeItem]);
 
     function handleClickWeekDay() {
         if (dayClass) {
@@ -51,16 +53,32 @@ const WeekDay: React.FC<IWeekDay> = ({ dayClass, schedule, day, setActivatedDay,
 
         const currentDiv = event.currentTarget
 
-        setChosenTimeItem([
-            ...chosenTimeItem,
-            {chosenTime: currentDiv.innerHTML}
-        ]);
+        const findTime = chosenTimeItem.find(time => time.chosenTime === currentDiv.innerHTML)
 
-        setSelected(selected === "" ? "selected" : "");
+        console.log("find time", findTime)
 
-        currentDiv.className = `hourMinutes ${selected}`;
+        if (!findTime) {
+            setChosenTimeItem([
+                ...chosenTimeItem,
+                {chosenTime: currentDiv.innerHTML}
+            ]);
 
-        console.log("aqui", chosenTimeItem)
+            currentDiv.className = "hourMinutes selected"
+        } else {
+            const removingTime = chosenTimeItem.filter(time => time.chosenTime !== findTime.chosenTime)
+
+            console.log("removing time", removingTime)
+
+            setChosenTimeItem(removingTime)
+
+            currentDiv.className = "hourMinutes"
+        }
+
+        
+
+        // setSelected(selected === "" ? "selected" : "");
+
+        // currentDiv.className = `hourMinutes ${selected}`;
     }
 
     return (

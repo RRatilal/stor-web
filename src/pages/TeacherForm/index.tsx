@@ -32,8 +32,6 @@ function TeacherForm() {
             ...scheduleItens,
             { week_day: null, from: '', to: '' }
         ])
-
-        console.log(scheduleItens)
     }
 
     function handleRemoveScheduleItem(currentItem: any) {
