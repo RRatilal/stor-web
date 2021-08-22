@@ -23,7 +23,7 @@ const WeekDay: React.FC<IWeekDay> = ({ dayClass, schedule, day, setActivatedDay,
     const [rangeArray, setRangeArray] = useState<number[]>([]);
     const [selected, setSelected] = useState("");
     const [chosenTimeItem, setChosenTimeItem] = useState([
-        {chosenTime: ""}
+        {chosenTime: "", day: ""}
     ]);
 
     useEffect(() => {
@@ -60,7 +60,7 @@ const WeekDay: React.FC<IWeekDay> = ({ dayClass, schedule, day, setActivatedDay,
         if (!findTime) {
             setChosenTimeItem([
                 ...chosenTimeItem,
-                {chosenTime: currentDiv.innerHTML}
+                {chosenTime: currentDiv.innerHTML, day}
             ]);
 
             currentDiv.className = "hourMinutes selected"
