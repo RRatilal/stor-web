@@ -1,8 +1,8 @@
-import React, { FormEvent, useEffect, useState } from 'react';
+import React, {  useState } from 'react';
 import { useSocket } from '../../context/socket'
 
 import Notification from '../../components/Notification';
-import VideoOptions from '../../components/VideoOptions';
+// import VideoOptions from '../../components/VideoOptions';
 import VideoPlayer from '../../components/VideoPlayer';
 
 import videoIcon from '../../assets/images/icons/video-camera.svg';
@@ -14,7 +14,7 @@ import moreIcon from '../../assets/images/icons/more.svg';
 
 import './styles.css';
 import PageHeader from '../../components/PageHeader';
-import Input from '../../components/Input';
+// import Input from '../../components/Input';
 
 function Classroom() {
     const [muteVideo, setMuteVideo] = useState(false);

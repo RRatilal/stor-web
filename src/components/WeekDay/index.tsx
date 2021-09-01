@@ -24,7 +24,7 @@ const WeekDay: React.FC<IWeekDay> = ({ dayClass, schedule, day, setActivatedDay,
     const [active, setActive] = useState("");
     const [rangeArray, setRangeArray] = useState<number[]>([]);
 
-    const { getScheduleData } = useSchedule();
+    const {  selected, clickedItem, getScheduleData } = useSchedule();
     
 
     useEffect(() => {
@@ -59,13 +59,13 @@ const WeekDay: React.FC<IWeekDay> = ({ dayClass, schedule, day, setActivatedDay,
                 <>
                     <div>{day}</div>
                     {
-                        rangeArray.map(range => {
+                        rangeArray.map((range, index) => {
                             const minutes = range % 60
                             return (
                                 <div 
-                                    key={range} 
-                                    className={`hourMinutes`}
-                                    onClick={event => getScheduleData(event, day)}
+                                    key={index}
+                                    className={`hourMinutes ${clickedItem === index ? selected : ""}`}
+                                    onClick={event => getScheduleData(event, day, index)}
                                 >
                                     {Math.floor(range / 60)}:
                                     {minutes === 0 ? "00" : minutes}

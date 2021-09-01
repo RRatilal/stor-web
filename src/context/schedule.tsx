@@ -1,11 +1,15 @@
-import React, { createContext, Dispatch, SetStateAction, useContext, useState } from 'react';
+import React, { createContext, useContext, useState, MouseEvent, useEffect } from 'react';
 import { useAdmin } from './admin';
 
 interface IScheduleContext {
-    subject: string,
-    chosedTimes: {}[];
-    setSubject: Dispatch<SetStateAction<string>>
-    getScheduleData: () => void
+    selected: string;
+    clickedItem: number | null;
+    chosenTimeItem: {}[];
+    getScheduleData(
+        event: MouseEvent<HTMLDivElement>,
+        day: string,
+        index: number
+    ): void
 }
 
 const ScheduleContext = createContext({} as IScheduleContext)
@@ -67,7 +71,7 @@ const ScheduleProvider: React.FC = ({ children }) => {
     }
 
     return (
-        <ScheduleContext.Provider value={{ subject, chosedTimes, setSubject, getScheduleData }}>
+        <ScheduleContext.Provider value={{ selected, clickedItem, chosenTimeItem, getScheduleData }}>
             { children }
         </ScheduleContext.Provider>
     )
