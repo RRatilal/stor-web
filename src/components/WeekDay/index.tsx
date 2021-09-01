@@ -4,6 +4,8 @@ import ArrowRightIcon from '../../assets/images/icons/arrow-right.svg';
 
 import './styles.css';
 
+import { useSchedule } from '../../context/schedule'
+
 interface ISchedules {
     id: number;
     week_day: number;
@@ -21,10 +23,9 @@ interface IWeekDay extends HTMLAttributes<HTMLDivElement> {
 const WeekDay: React.FC<IWeekDay> = ({ dayClass, schedule, day, setActivatedDay, ...rest }) => {
     const [active, setActive] = useState("");
     const [rangeArray, setRangeArray] = useState<number[]>([]);
-    const [selected, setSelected] = useState("");
-    const [chosenTimeItem, setChosenTimeItem] = useState([
-        {chosenTime: "", day: ""}
-    ]);
+
+    const { getScheduleData } = useSchedule();
+    
 
     useEffect(() => {
         if (schedule) {
@@ -37,9 +38,7 @@ const WeekDay: React.FC<IWeekDay> = ({ dayClass, schedule, day, setActivatedDay,
 
             setRangeArray(result)
         }
-
-        console.log(chosenTimeItem)
-    }, [schedule, chosenTimeItem]);
+    }, [schedule]);
 
     function handleClickWeekDay() {
         if (dayClass) {
@@ -48,38 +47,7 @@ const WeekDay: React.FC<IWeekDay> = ({ dayClass, schedule, day, setActivatedDay,
         }
     }
 
-    function handleChoseTime(event: MouseEvent<HTMLDivElement>) {
-        event.stopPropagation();
 
-        const currentDiv = event.currentTarget
-
-        const findTime = chosenTimeItem.find(time => time.chosenTime === currentDiv.innerHTML)
-
-        console.log("find time", findTime)
-
-        if (!findTime) {
-            setChosenTimeItem([
-                ...chosenTimeItem,
-                {chosenTime: currentDiv.innerHTML, day}
-            ]);
-
-            currentDiv.className = "hourMinutes selected"
-        } else {
-            const removingTime = chosenTimeItem.filter(time => time.chosenTime !== findTime.chosenTime)
-
-            console.log("removing time", removingTime)
-
-            setChosenTimeItem(removingTime)
-
-            currentDiv.className = "hourMinutes"
-        }
-
-        
-
-        // setSelected(selected === "" ? "selected" : "");
-
-        // currentDiv.className = `hourMinutes ${selected}`;
-    }
 
     return (
         <div
@@ -97,7 +65,7 @@ const WeekDay: React.FC<IWeekDay> = ({ dayClass, schedule, day, setActivatedDay,
                                 <div 
                                     key={range} 
                                     className={`hourMinutes`}
-                                    onClick={event => handleChoseTime(event)}
+                                    onClick={event => getScheduleData(event, day)}
                                 >
                                     {Math.floor(range / 60)}:
                                     {minutes === 0 ? "00" : minutes}
