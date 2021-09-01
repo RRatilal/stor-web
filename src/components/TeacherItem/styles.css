@@ -133,7 +133,7 @@
 }
 
 .teacher-item footer p strong {
-    color: var(--color-primary);
+    color: var(--color-title-in-primary);
     font-size: 1.6rem;
     display: block;
 }
