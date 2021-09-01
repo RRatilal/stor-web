@@ -137,7 +137,7 @@ const TeacherItem: React.FC<ITeacherItemPros> = ({ teacher }) => {
                             <strong>{teacher.cost} MZN</strong>
                 </p>
                 <button onClick={handleCreateNewConnection}>
-                            Marcar
+                            Seguinte
                 </button>
             </footer>
         </article>
