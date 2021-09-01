@@ -62,10 +62,8 @@ const ScheduleProvider: React.FC = ({ children }) => {
 
             setSelected("");
 
-    function getScheduleData() {
-        console.log(updatedUser)
-        console.log(subject)
-        console.log(chosedTimes)
+            // currentDiv.className = `hourMinutes ${selected}`;
+        }
     }
 
     return (
