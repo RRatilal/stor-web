@@ -22,7 +22,7 @@ const TeacherProfil: React.FC = () => {
     const [surname, setSurame] = useState('');
     const [email, setEmail] = useState('');
     const [avatar, setAvatar] = useState('');
-    const [whatsapp, setWhatsapp] = useState('');
+    const [number, setNumber] = useState('');
     const [bio, setBio] = useState('');
     const [image, setImage] = useState<File>();
 
@@ -35,7 +35,7 @@ const TeacherProfil: React.FC = () => {
             setSurame(updatedUser.surname);
             setEmail(updatedUser.email);
             setAvatar(updatedUser.image?.url);
-            setWhatsapp(updatedUser.whatsapp);
+            setNumber(updatedUser.number);
             setBio(updatedUser.bio);
         }
     }, [updatedUser])
@@ -48,7 +48,7 @@ const TeacherProfil: React.FC = () => {
         data.append('name', name);
         data.append('surname', surname);
         data.append('email', email);
-        data.append('whatsapp', whatsapp);
+        data.append('number', number);
         data.append('bio', bio);
         if (image)
             data.append('image', image)
@@ -110,7 +110,7 @@ const TeacherProfil: React.FC = () => {
                         </div>
                         <div className="email-whatsapp">
                             <Input name="email" label="E-mail" value={email} onChange={(e) => { setEmail(e.target.value) }} />
-                            <Input name="whatsapp" label="Whatsapp" value={whatsapp} onChange={(e) => { setWhatsapp(e.target.value) }} />
+                            <Input name="number" label="Number" value={number} onChange={(e) => { setNumber(e.target.value) }} />
                         </div>
                         <Textarea name="bio" label="Biografia" value={bio} onChange={(e) => { setBio(e.target.value) }} />
                     </fieldset>

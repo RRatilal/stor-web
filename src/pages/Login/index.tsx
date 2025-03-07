@@ -11,7 +11,7 @@ import './styles.css';
 const Login: React.FC = () => {
     const { logIn } = useAuth();
 
-    const [email, setEmail] = useState('');
+    const [number, setNumber] = useState('');
     const [password, setPassword] = useState('');
 
 
@@ -19,7 +19,7 @@ const Login: React.FC = () => {
         e.preventDefault();
 
         try {
-            logIn(email, password)
+            logIn({number, password})
         } catch (error) {
             console.log(error)
         }
@@ -41,12 +41,12 @@ const Login: React.FC = () => {
                             <fieldset>
                                 <Input
                                     className="email"
-                                    name="email"
-                                    type="email"
-                                    span="E-mail"
+                                    name="number"
+                                    type="number"
+                                    span="Numero"
                                     required={true}
-                                    placeholder="E-mail" value={email}
-                                    onChange={(e) => { setEmail(e.target.value) }}
+                                    placeholder="E-mail" value={number}
+                                    onChange={(e) => { setNumber(e.target.value) }}
                                 />
                                 <div className="password-input">
                                     <Input
