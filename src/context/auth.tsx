@@ -78,18 +78,22 @@ export const AuthProvider: React.FC<{ children: React.ReactNode }> = ({ children
     const loadStorageData = async () => {
       const token = localStorage.getItem(TOKEN_STORAGE_KEY);
       const user = localStorage.getItem(AUTH_STORAGE_KEY);
-      const refreshToken = localStorage.getItem(REFRESH_TOKEN_STORAGE_KEY);
 
       if (token && user) {
-        api.defaults.headers.Authorization = `Bearer ${token}`;
-        setData({ token, user: JSON.parse(user) });
+        try {
+          api.defaults.headers.Authorization = `Bearer ${token}`;
+          setData({ token, user: JSON.parse(user) });
+        } catch (error) {
+          console.error("Invalid token:", error)
+          logOut()
+        }
       }
 
       setLoading(false);
     };
 
     loadStorageData();
-  }, []);
+  });
 
   const logIn = useCallback(async ({ number, password }: LoginCredentials) => {
     try {

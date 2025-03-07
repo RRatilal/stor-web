@@ -50,14 +50,13 @@ export const AdminProvider: React.FC<{ children: React.ReactNode }> = ({ childre
     try {
       const storedUser = localStorage.getItem(ADMIN_USER_STORAGE_KEY);
       
-      if (storedUser && storedUser !== 'undefined') {
-        return { updatedUser: JSON.parse(storedUser) };
+      return {
+        updatedUser: storedUser ? JSON.parse(storedUser) : null
       }
     } catch (error) {
       console.error('Error parsing stored user data:', error);
+      return { updatedUser: null }
     }
-    
-    return { updatedUser: null };
   });
 
   const [loading, setLoading] = useState(true);
@@ -114,17 +113,12 @@ export const AdminProvider: React.FC<{ children: React.ReactNode }> = ({ childre
   }, []);
 
   useEffect(() => {
-    const loadInitialData = async () => {
-      try {
-        await getUpdatedUserData();
-      } catch (error) {
-        console.error('Error loading initial data:', error);
-        setLoading(false);
-      }
-    };
-
-    loadInitialData();
-  }, [getUpdatedUserData]);
+    if (data.updatedUser?.id) {
+      getUpdatedUserData()
+    } else {
+      setLoading(false)
+    }
+  }, [getUpdatedUserData, data.updatedUser?.id]);
 
   // Setup API error interceptor
   useEffect(() => {
